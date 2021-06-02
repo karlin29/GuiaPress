@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const connection = require("./database/database");
 
+const Article = require ("./articles/Article");
+const Category = require ("./categories/Category");
+
 //view engine
 app.set('view engine', 'ejs');
 
