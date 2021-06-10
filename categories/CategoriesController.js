@@ -28,6 +28,33 @@ router.get("/admin/categories/", (req, res) => {
     });  
 });
 
+router.post("/categories/delete", (req, res) => {
+    var id = req.body.id;
+    if(id != undefined){ //  SE FOR DIFERENTE DE NULO / IF DIFFERENT OF NULL
+
+        if(!isNaN(id)){ // SE PASSAR EM TODAS AS VALIDAÇÕES / IF PASSED ALL VALIDATIONS
+
+            Category.destroy({
+                where: {
+                    id: id
+                }
+            }).then(()=>{
+                res.redirect("/admin/categories");
+            });
+
+        } else { // SE NÃO FOR UM NÚMERO / IF NOT A NUMBER
+            res.redirect("/admin/categories");
+        }
+
+    } else { // SE FOR NULO / IF RESULT IS EQUALS A NULL
+
+        res.redirect("/admin/categories");
+
+    }
+});
+
+
+
 
 
 
