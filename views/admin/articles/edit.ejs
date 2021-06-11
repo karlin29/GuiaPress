@@ -16,6 +16,10 @@
                 <label><b>Texto:</b></label><br>
                 <textarea class="form-control" text="<%= article.body %>" name="body" id="article"></textarea><br>
                 <input type="hidden" name="body" value="<%= article.body %>">
+                <label><b>Categoria:</b></label>
+                <select name="category" class="form-control">
+                        <option value="<%= article.categoryId %>" ><%= article.categoryId %></option>
+                </select><br>
                 <button class="btn btn-success">Atualizar</button>
             </form>
         </div>  
