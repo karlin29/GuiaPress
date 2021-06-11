@@ -5,13 +5,22 @@
 <script>src="/js/bootstrap.min.js"</script>
 
 <script>
-    function deleteConfirmation(event, form){
+    function deleteCategoryConfirmation(event, form){
         event.preventDefault();
         var decision = confirm("Você quer mesmo deletar a categoria selecionada?");
         if(decision){
             form.submit();
         };
     };
+
+    function deleteArticleConfirmation(event, form){
+        event.preventDefault();
+        var decision = confirm("Você quer mesmo deletar o artigo selecionado?");
+        if(decision){
+            form.submit();
+        };
+    };
+
 </script>
 
 </html>

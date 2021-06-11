@@ -7,4 +7,15 @@
     <title>Guiapress</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+        tinymce.init({
+          language: 'pt_BR',
+          selector: '#article',
+          plugins: [
+              'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+          ]
+        });
+      </script>
 </head>

@@ -1,0 +1,25 @@
+<%- include ('../../partials/header.ejs'); %>
+<%- include ('../../partials/navbar.ejs'); %>
+
+<div class="container">
+    <hr>
+    <div class="card">
+        <div class="card-header">
+                <h2>Editar Artigo</h2>
+        </div>
+        <div class="card-body">   
+            <hr>
+            <form method="POST" action="/articles/update">
+                <label><b>Título:</b></label>
+                <input class="form-control" type="text" name="title" placeholder="" value="<%= article.title %>"><br>
+                <input type="hidden" name="id" value="<%= article.id %>">
+                <label><b>Texto:</b></label><br>
+                <textarea class="form-control" text="<%= article.body %>" name="body" id="article"></textarea><br>
+                <input type="hidden" name="body" value="<%= article.body %>">
+                <button class="btn btn-success">Atualizar</button>
+            </form>
+        </div>  
+    </div>
+</div>
+
+<%- include ('../../partials/footer.ejs'); %>
