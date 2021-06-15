@@ -21,6 +21,7 @@ router.get("/admin/articles/new", (req,res) => {
 
 router.post("/articles/save", (req,res) => {
     var title = req.body.title;
+    var description = req.body.description;
     var body = req.body.body;
     var category = req.body.category;
 
@@ -28,6 +29,7 @@ router.post("/articles/save", (req,res) => {
         title: title,
         slug: slugify(title),
         body: body,
+        description: description,
         categoryId: category
     }).then(()=> {
         res.redirect("/admin/articles")
@@ -63,8 +65,11 @@ router.post("/articles/delete", (req, res) => {
 router.post("/articles/update", (req, res) => {
     var id = req.body.id;
     var title = req.body.title;
+    var category = req.body.category;
+    var body = req.body.body;
+    var description = req.body.description;
 
-    Article.update({title: title, slug: slugify(title)},{
+    Article.update({title: title, description:description, category:category, body:body, slug: slugify(title)},{
         where: {
             id: id
         }

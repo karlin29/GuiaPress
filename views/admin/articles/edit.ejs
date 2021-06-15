@@ -11,15 +11,14 @@
             <hr>
             <form method="POST" action="/articles/update">
                 <label><b>Título:</b></label>
-                <input class="form-control" type="text" name="title" placeholder="" value="<%= article.title %>"><br>
+                <input class="form-control" type="text" name="title" maxlength="60" placeholder="" value="<%= article.title %>"><br>
+                <label><b>Descrição do Artigo:</b></label>
+                <input class="form-control" type="text" name="description" maxlength="30" placeholder="" value="<%= article.description %>"><br>
                 <input type="hidden" name="id" value="<%= article.id %>">
+
                 <label><b>Texto:</b></label><br>
-                <textarea class="form-control" text="<%= article.body %>" name="body" id="article"></textarea><br>
-                <input type="hidden" name="body" value="<%= article.body %>">
-                <label><b>Categoria:</b></label>
-                <select name="category" class="form-control">
-                        <option value="<%= article.categoryId %>" ><%= article.categoryId %></option>
-                </select><br>
+                <textarea class="form-control" name="body" id="article"><%- article.body %></textarea><br>
+
                 <button class="btn btn-success">Atualizar</button>
             </form>
         </div>  

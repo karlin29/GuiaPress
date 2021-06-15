@@ -13,7 +13,12 @@ const Article = connection.define('articles', {
     body: {
         type: Sequelize.TEXT,
         allowNull: false
+    },
+    description: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
+
 })
 
 Category.hasMany(Article); // One category have many articles 
