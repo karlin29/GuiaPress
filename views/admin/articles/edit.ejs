@@ -19,6 +19,14 @@
                 <label><b>Texto:</b></label><br>
                 <textarea class="form-control" name="body" id="article"><%- article.body %></textarea><br>
 
+                <label>Categoria:</label>
+                <select name="category" class="form-control">
+                    <% categories.forEach((category) => { %>
+                        
+                        <option value= "<%= category.id %>"><%= category.title %></option>
+                    <% }) %>
+                </select>
+
                 <button class="btn btn-success">Atualizar</button>
             </form>
         </div>  
